@@ -1,0 +1,24 @@
+.statistics {
+    display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 350px;
+  border: 4px solid rgb(55, 52, 52);
+  border-radius: 8px;
+  background: grey;
+  cursor: pointer;
+  &:hover {
+    background: rgb(55, 52, 52);
+    color: white;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+// .title {
+// }
+// .stat-list {
+// }
+// .item {
+// }
+// .label {
+// }
+// .percentage {
+// }
