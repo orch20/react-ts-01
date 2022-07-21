@@ -1,8 +1,8 @@
-import { InfoThumb } from "./InfoThumb/InfoThumb";
+import { Portfolio } from "./Portfolio/Portfolio";
 import userInfo from "user.json";
 
 export const App = () => {
   return <div>
-    <InfoThumb userInfo= { userInfo } />
+    <Portfolio userInfo= { userInfo } />
   </div>
 };
