@@ -1,28 +1,43 @@
-// import PropTypes from 'prop-types';
-import css from './Statistics.module.scss';
+import PropTypes from 'prop-types';
+import scss from './Statistics.module.scss';
 
 
-export const Statistics = ({data, title}) => {
-    return <section className="scss.statistics">
-  <h2 className="scss.title"> {title ? "Upload stats" : ""}</h2>
+export const Statistics = ({ stats, title }) => {
+  
+  return <section className={scss.statistics}>
+    { title ? <h2 className={scss.title}>Upload stats</h2> : null }
 
-  <ul className="scss.stat-list">
-    <li className="scss.item">
-      <span className="scss.label">.docx</span>
-      <span className="scss.percentage">4%</span>
-    </li>
-    <li className="scss.item">
-      <span className="scss.label">.mp3</span>
-      <span className="scss.percentage">14%</span>
-    </li>
-    <li className="scss.item">
-      <span className="scss.label">.pdf</span>
-      <span className="scss.percentage">41%</span>
-    </li>
-    <li className="scss.item">
-      <span className="scss.label">.mp4</span>
-      <span className="scss.percentage">12%</span>
-    </li>
-  </ul>
-</section>
+      <ul className={scss.statList}>
+        
+        {
+          stats.map(data => (
+
+                  <li className={scss.item} key={data.id} >
+                      <span className={scss.label}>{data.label}</span>
+                      <span className={scss.percentage}>{data.percentage + "%"}</span>
+                  </li>))
+        
+        }
+              </ul>
+            </section>
 }
+
+Statistics.propTypes = {
+  title: PropTypes.string,
+  stats: PropTypes.arrayOf(
+    PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    label:PropTypes.string.isRequired,
+    percentage:PropTypes.number.isRequired
+    })
+  ),
+};
+// style="{{backgroundColor: {getRandomColor()}}}"
+// function getRandomColor() {
+//   const letters = '0123456789ABCDEF';
+//   let color = '#';
+//   for (var i = 0; i < 6; i++) {
+//     color += letters[Math.floor(Math.random() * 16)];
+//   }
+//   return color;
+// }
