@@ -1,22 +1,28 @@
-import styled from "styled-components"
-export const FriendListItem = ({ avatar, name, isOnline }) => { 
-    return (
-        <FriendItem>
-            <Status isOnline={isOnline} />
-            <Img src={avatar} alt={name} width="48"/>
-            <Name>{name}</Name>
-        </FriendItem>
-    )
-}
+// import styled from "styled-components"
+// import PropTypes from "prop-types";
 
-const FriendItem = styled.li`
-width: 100%;
-`
-const Img = styled.img``
+// export const FriendListItem = ({ avatar, name, isOnline }) => { 
+//     return (
+//         <FriendItem>
+//             <Status isOnline={isOnline} />
+//             <Img src={avatar} alt={name} width="48"/>
+//             <Name>{name}</Name>
+//         </FriendItem>
+//     )
+// }
 
-const Status = styled.span``
 
-const Name = styled.p``
+
+
+
+// const FriendItem = styled.li`
+// width: 100%;
+// `
+// const Img = styled.img``
+
+// const Status = styled.span``
+
+// const Name = styled.p``
 
 
 // <li class="item">
