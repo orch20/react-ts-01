@@ -1,32 +1,17 @@
-// import styled from "styled-components"
-// import PropTypes from "prop-types";
+import css from './FriendListItem.module.scss';
+import PropTypes from 'prop-types';
 
-// export const FriendListItem = ({ avatar, name, isOnline }) => { 
-//     return (
-//         <FriendItem>
-//             <Status isOnline={isOnline} />
-//             <Img src={avatar} alt={name} width="48"/>
-//             <Name>{name}</Name>
-//         </FriendItem>
-//     )
-// }
+export const FriendListItem = ({ id, avatar, name, isOnline }) => {
+    console.log(isOnline);
+    return <li className={css.item} key={id}>
+        <span className={css.status} style={{ backgroundColor: isOnline ? 'green' : 'red' }} > {' '} </span>
+        <img className={css.avatar} src={avatar} alt="User avatar" width="48" />
+        <p className={css.name}>{name}</p>
+</li>
+}
 
-
-
-
-
-// const FriendItem = styled.li`
-// width: 100%;
-// `
-// const Img = styled.img``
-
-// const Status = styled.span``
-
-// const Name = styled.p``
-
-
-// <li class="item">
-//   <span class="status"></span>
-//   <img class="avatar" src="" alt="User avatar" width="48" />
-//   <p class="name"></p>
-// </li>
+FriendListItem.propTypes = {
+  avatar: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  isOnline: PropTypes.bool.isRequired,
+};
