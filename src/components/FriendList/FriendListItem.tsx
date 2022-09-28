@@ -1,7 +1,8 @@
 import css from './FriendListItem.module.scss';
-import PropTypes from 'prop-types';
+import { friendsProps } from './FriendList';
+// import PropTypes from 'prop-types';
 
-export const FriendListItem = ({ id, avatar, name, isOnline }) => {
+export const FriendListItem = ({ id, avatar, name, isOnline }: friendsProps) => {
     console.log(isOnline);
     return <li className={css.item} key={id}>
         <span className={css.status} style={{ backgroundColor: isOnline ? 'green' : 'red' }} > {' '} </span>
@@ -10,8 +11,8 @@ export const FriendListItem = ({ id, avatar, name, isOnline }) => {
 </li>
 }
 
-FriendListItem.propTypes = {
-  avatar: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  isOnline: PropTypes.bool.isRequired,
-};
+// FriendListItem.propTypes = {
+//   avatar: PropTypes.string.isRequired,
+//   name: PropTypes.string.isRequired,
+//   isOnline: PropTypes.bool.isRequired,
+// };
